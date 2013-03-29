@@ -45,6 +45,7 @@ html, body {
 	z-index: 1200;
 	margin: 0 auto;
 	position: relative;
+	
 }
 
 .modal .buttonClose {
@@ -59,6 +60,7 @@ html, body {
 	position: relative;
 	_display: inline;
 	margin: 0 auto;
+
 
 	text-align: center;
 
