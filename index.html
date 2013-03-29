@@ -7,80 +7,46 @@
 	<link rel="stylesheet" href="css/jquery.simple.lightbox.css" type="text/css" media="screen" />
 
 	<style type="text/css" media="screen">
-		body {
-			font-family: Arial, sans-serif;
-			font-size: 14px;
-			line-height: 1.5;
-			color: #656565;
+
+	h1, h2, h3, h4 {
+		color: #333;
+	}
+
+	#container {
+		padding: 20px;
+		margin: 0 auto;
+		width: 80%;
+		max-width: 600px;
+	}
+
+	.caption {
+		font-family: Arial;
+		font-size: 11px;
+	}
+	
+	.imageList {
+		padding: 0 0 12px;
+		list-style: none;
+		zoom: 1;
+	}
+
+		.imageList:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
 		}
 
-		h1, h2, h3, h4 {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			color: #333;
-		}
+	.imageList li {
+		float: left;
+		margin: 0 1px 0 0;
+	}
 
-		#container {
-			padding: 20px;
-			margin: 0 auto;
-			width: 600px;
+		.imageList a,
+		.imageList img {
+			display: block;
 		}
-		
-		pre, code {
-			font-size: 11px;
-		}
-		
-		pre {
-			margin: 10px 0;
-		}
-
-		h3 {
-			color: #000;
-			font-size: 36px;
-			letter-spacing: -1px;
-			margin: 0 0 24px;
-		}
-		
-		ul {
-			list-style: disc;
-			padding: 0 0 12px 24px;
-		}
-		
-		h4 {
-			font-size: 16px;
-		}
-		
-		p, h4 {
-			padding: 0 0 12px;
-		}
-
-		.caption {
-			font-family: Arial;
-			font-size: 11px;
-		}
-		
-		.imageList {
-			padding: 0 0 12px;
-			list-style: none;
-			zoom: 1;
-		}
-
-			.imageList:after {
-				content: ".";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-
-		.imageList li {
-			float: left;
-			margin: 0 1px 0 0;
-		}
-
-			.imageList a,
-			.imageList img {
-				display: block;
-			}
 	</style>
 </head>
 <body>
