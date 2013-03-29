@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Wolf Lightbox: simple jQuery lightbox</title>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/wolfmodal.css" type="text/css" media="screen" />
+	<style type="text/css" media="screen">
+		body {
+			font-family: Georgia, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+			color: #656565;
+		}
+
+		h1, h2, h3, h4 {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: #333;
+		}
+
+		#container {
+			padding: 20px;
+			margin: 0 auto;
+			width: 600px;
+		}
+		
+		pre, code {
+			font-size: 11px;
+		}
+		
+		pre {
+			margin: 10px 0;
+		}
+
+		h3 {
+			color: #000;
+			font-size: 36px;
+			letter-spacing: -1px;
+			margin: 0 0 24px;
+		}
+		
+		ul {
+			list-style: disc;
+			padding: 0 0 12px 24px;
+		}
+		
+		h4 {
+			font-size: 16px;
+		}
+		
+		p, h4 {
+			padding: 0 0 12px;
+		}
+
+		.caption {
+			font-family: Arial;
+			font-size: 11px;
+		}
+		
+		.imageList {
+			padding: 0 0 12px;
+			list-style: none;
+			zoom: 1;
+		}
+
+			.imageList:after {
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+
+		.imageList li {
+			float: left;
+			margin: 0 1px 0 0;
+		}
+
+			.imageList a,
+			.imageList img {
+				display: block;
+			}
+	</style>
+</head>
+<body>
+	
+	<div id="container">
+		<h3>Simple jQuery lightbox</h3>
+
+		<p>Why do all lightboxes out there use a gazillion images and options when all I want is to show a larger image when I click a small one?</p>
+
+		<p><strong>Features:</strong> keyboard close with Esc or X button; automatically centers in all browsers; easy to add, just add a <code>class="lightbox"</code> to a linked image</p>
+
+		<h4>Demo</h4>
+
+		<p>Click an image:</p>
+
+		<ul class="imageList">
+			<li><a href="image_big.jpg" class="lightbox"><img src="image_small.jpg" alt="My Triumph typewriter" /></a></li>
+			<li><a href="image2_big.jpg" class="lightbox"><img src="image2_small.jpg" alt="My succulent plant in one of it's better days" /></a></li>
+			<li><a href="image3_big.jpg" class="lightbox"><img src="image3_small.jpg" alt="The Atlantic" /></a></li>
+		</ul>
+
+		<h4>Browser support</h4>
+		<p>Tested in IE6-9, Opera 10+, FF3.5+, Safari 5, Chrome 6</p>
+
+		<h4>Files</h4>
+
+		<ul>
+			<li><code>reset.css</code> includes a CSS reset; you'll probably already use one in your project.</li>
+			<li><code>wolfmodal.css</code> includes CSS to make the modal look nice, but this CSS is not required. You can ignore the file and roll your own</li>
+			<li><code>jquery.wolfmodal.js</code>: the script itself</li>
+			<li><code>button_close.png</code> button image; the only image used (.gif for IE6)</li>
+		</ul>
+
+		<h4>Usage</h4>
+
+		<ul>
+			<li>Make sure you required <code>jquery.wolfmodal.js</code>.</li>
+			<li>Link a small image to a big image: <code>&lt;a href=&quot;image_big.jpg&quot;&gt;&lt;img src=&quot;image_small.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</code></li>
+			<li>Add a <code>class="lightbox"</code> to the &lt;a&gt;</li>
+			<li>Optional: Add alt text to the &lt;img&gt; for the caption</li>
+		</ul>
+
+		<h4>Download</h4>
+
+		<p>Download from Github: <code>git clone git@github.com:Wolfr/Wolf-lightbox.git</code> or visit <a href="http://github.com/Wolfr/Wolf-lightbox">the repository</a></p>
+
+		<h4>Todo</h4>
+
+		<ul>
+			<li>If an image does not get loaded, provide fallback/loading state</li>
+			<li>To test/Check: embed, object or selects in the background in IE</li>
+		</ul>
+
+		<h4>Credits</h4>
+
+		<p>License: BSD, details see file called LICENSE</p>
+
+		<ul>
+			<li>Original javascript: <a href="http://sumocoders.be/">Tijs Verkoyen</a></li>
+			<li>Modifications, JS rewrite and styling: <a href="http://www.wolfslittlestore.be">Johan Ronsse</a></li>
+		</ul>
+
+	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.wolfmodal.js"></script>
+
+</body>
+</html>
