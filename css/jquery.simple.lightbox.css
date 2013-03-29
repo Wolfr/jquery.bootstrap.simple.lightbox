@@ -27,8 +27,7 @@ html, body {
 	top: 0;
 	left: 0;
 
-	background: #7C92A7;
-	background: -webkit-gradient(linear, left top, left bottom, from(#79A9D8), to(#7C92A7));
+	background: #333;
 
 	/* @inc opacity */
 	opacity: 0.33;

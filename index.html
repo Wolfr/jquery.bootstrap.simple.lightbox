@@ -1,14 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Wolf Lightbox: simple jQuery lightbox</title>
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/wolfmodal.css" type="text/css" media="screen" />
+	<meta charset="utf-8" />
+	<title>jquery.simple.lightbox demo</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery.simple.lightbox.css" type="text/css" media="screen" />
+
 	<style type="text/css" media="screen">
 		body {
-			font-family: Georgia, Arial, sans-serif;
+			font-family: Arial, sans-serif;
 			font-size: 14px;
 			line-height: 1.5;
 			color: #656565;
@@ -96,21 +96,21 @@
 
 		<p>Click an image:</p>
 
-		<ul class="imageList">
-			<li><a href="image_big.jpg" class="lightbox"><img src="image_small.jpg" alt="My Triumph typewriter" /></a></li>
-			<li><a href="image2_big.jpg" class="lightbox"><img src="image2_small.jpg" alt="My succulent plant in one of it's better days" /></a></li>
-			<li><a href="image3_big.jpg" class="lightbox"><img src="image3_small.jpg" alt="The Atlantic" /></a></li>
+		<ul class="imageList unstyled">
+			<li><a href="demo_images/image_big.jpg" class="lightbox"><img src="demo_images/image_small.jpg" alt="My Triumph typewriter" /></a></li>
+			<li><a href="demo_images/image2_big.jpg" class="lightbox"><img src="demo_images/image2_small.jpg" alt="My succulent plant in one of it's better days" /></a></li>
+			<li><a href="demo_images/image3_big.jpg" class="lightbox"><img src="demo_images/image3_small.jpg" alt="The Atlantic" /></a></li>
 		</ul>
 
 		<h4>Browser support</h4>
-		<p>Tested in IE6-9, Opera 10+, FF3.5+, Safari 5, Chrome 6</p>
+		<p>Tested in FF3.5+, Safari 5, Chrome 6 (IE6 support was removed)</p>
 
 		<h4>Files</h4>
 
 		<ul>
 			<li><code>reset.css</code> includes a CSS reset; you'll probably already use one in your project.</li>
-			<li><code>wolfmodal.css</code> includes CSS to make the modal look nice, but this CSS is not required. You can ignore the file and roll your own</li>
-			<li><code>jquery.wolfmodal.js</code>: the script itself</li>
+			<li><code>jquery.simple.lightbox.css</code> includes CSS to make the modal look nice, but this CSS is not required. You can ignore the file and roll your own</li>
+			<li><code>jquery.simple.lightbox.js</code>: the script itself</li>
 			<li><code>button_close.png</code> button image; the only image used (.gif for IE6)</li>
 		</ul>
 
@@ -122,10 +122,6 @@
 			<li>Add a <code>class="lightbox"</code> to the &lt;a&gt;</li>
 			<li>Optional: Add alt text to the &lt;img&gt; for the caption</li>
 		</ul>
-
-		<h4>Download</h4>
-
-		<p>Download from Github: <code>git clone git@github.com:Wolfr/Wolf-lightbox.git</code> or visit <a href="http://github.com/Wolfr/Wolf-lightbox">the repository</a></p>
 
 		<h4>Todo</h4>
 
@@ -145,8 +141,8 @@
 
 	</div>
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.wolfmodal.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.simple.lightbox.js"></script>
 
 </body>
 </html>
