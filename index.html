@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/jquery.simple.lightbox.css">
 
     <style>
+    
+        /* For demo page only */
 
         h1, h2, h3, h4 {
             color: #333;
@@ -27,16 +29,9 @@
         .imageList {
             padding: 0 0 12px;
             list-style: none;
+            overflow: hidden;
             zoom: 1;
         }
-
-            .imageList:after {
-                content: ".";
-                display: block;
-                height: 0;
-                clear: both;
-                visibility: hidden;
-            }
 
         .imageList li {
             float: left;
@@ -89,12 +84,16 @@
             <li>Make sure you required <code>jquery.wolfmodal.js</code>.</li>
             <li>Link a small image to a big image: <code>&lt;a href=&quot;image_big.jpg&quot;&gt;&lt;img src=&quot;image_small.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</code></li>
             <li>Add a <code>class="lightbox"</code> to the &lt;a&gt;</li>
-            <li>Optional: Add alt text to the &lt;img&gt; for the caption</li>
+            <li>Optional: Add alt text to the <code>&lt;img&gt;</code> for the caption</li>
         </ul>
 
         <h4>Todo</h4>
 
         <ul>
+            <li>Switch to - classes like bootstrap</li>
+            <li>Make lightbox cover max. 90% of viewport width/height</li>
+            <li>Make captions only visible when there is actually a caption</li>
+            <li>Switch to data attribute for behavior instead of CSS class</li>
             <li>If an image does not get loaded, provide fallback/loading state</li>
             <li>To test/Check: embed, object or selects in the background in IE</li>
         </ul>
