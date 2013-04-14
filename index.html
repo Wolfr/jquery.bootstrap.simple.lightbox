@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>jquery.simple.lightbox demo</title>
+    <title>jquery.bootstrap.simple.lightbox demo</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.simple.lightbox.css">
 
@@ -49,14 +49,13 @@
 <body>
     
     <div id="container">
-        <h3>jquery.simple.lightbox demo</h3>
+        <h3>jquery.bootstrap.simple.lightbox demo</h3>
         
         <p>Why do all lightboxes out there use a gazillion images and options when all I want is to show a larger image when I click a small one?</p>
 
         <ul>
-            <li>This lightbox builds on Bootstrap using bootstrap modal styles.</li>
+            <li>This lightbox builds on Bootstrap using the Bootstrap modal styles.</li>
             <li>Keyboard close with escape button</li>
-            <li>automatically centers in all browsers</li>
             <li>Easy to add, just add a data attribute <code>data-lightbox</code> to a linked image.</li>
         </ul>
 
@@ -73,27 +72,35 @@
         </ul>
 
         <h4>Browser support</h4>
-        <p>This code was fully rewritten and is yet untested in anything but Chrome.</p>
+        <p>This code is yet untested in anything but Chrome for Mac.</p>
 
-        <h4>Files</h4>
+        <h4>Necessary files</h4>
 
         <ul>
+            <li>jQuery</li>
+            <li>Bootstrap CSS and more specifically the modal and utility styles (for the <code>.hide</code> class)</li>
+            <li>Bootstrap JS and more specifically the transition (optional) script</li>
+
             <li><code>jquery.simple.lightbox.css</code> includes CSS to make the modal look nice, but this CSS is not required. You can ignore the file and roll your own</li>
             <li><code>jquery.simple.lightbox.js</code>: the script itself</li>
-            <li><code>button_close.png</code> button image; the only image used (.gif for IE6)</li>
         </ul>
 
         <h4>Usage</h4>
 
         <ul>
-            <li>Make sure you required <code>jquery.simple.lightbox.js</code>.</li>
             <li>Link a small image to a big image: <code>&lt;a href=&quot;image_big.jpg&quot;&gt;&lt;img src=&quot;image_small.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</code></li>
             <li>Add a data attribute <code>data-lightbox</code> to the &lt;a&gt;</li>
             <li>Optional: Add alt text to the <code>&lt;img&gt;</code> for the caption</li>
+            <li>Initialize the plugin:</li>
         </ul>
+        
+        <pre><code>// Invoke our plugin
+$('[data-lightbox]').simpleLightbox();
+</code></pre>
 
         <h4>Todo</h4>
         <ul>
+            <li>Automatically center in all browsers</li>
             <li>Add bootstrap transitions</li>
             <li>Make lightbox cover max. 90% of viewport width/height (= better support for portrait images, really huge images)</li>
             <li>Make captions only visible when there is actually a caption</li>
@@ -105,11 +112,6 @@
 
         <p>©2013, <a href="http://www.wolfslittlestore.be">Wolf's Little Store</a> - Free to use under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.</p>
 
-        <ul>
-            <li>Original javascript: <a href="http://sumocoders.be/">Tijs Verkoyen</a></li>
-            <li>Modifications, JS rewrite and styling: <a href="http://www.wolfslittlestore.be">Johan Ronsse</a></li>
-        </ul>
-
     </div>
 
     <!-- Add jQuery -->
@@ -119,7 +121,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- Add our plugin -->
-    <script type="text/javascript" src="js/jquery.simple.lightbox.js"></script>
+    <script type="text/javascript" src="js/jquery.bootstrap.simple.lightbox.js"></script>
 
     <!-- Invoke our plugin -->
     <script type="text/javascript" src="js/scripts.js"></script>

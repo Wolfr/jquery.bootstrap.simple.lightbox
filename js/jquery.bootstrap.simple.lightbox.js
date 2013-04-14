@@ -50,12 +50,12 @@
 
         $('body').append(modalHTML);
 
-        console.log('showBox');
-        console.log($this);
+        // console.log('showBox');
+        // console.log($this);
 
         // Load the image offscreen
         var imageSource = $this.attr('href');
-        console.log(imageSource);
+        // console.log(imageSource);
         $('body').append('<img class="image-shim hide" src="' + imageSource + '" />');
 
         // Define contents of lightbox
@@ -87,7 +87,7 @@
 
       function closeBox(e) {
 
-        console.log('closeBox');
+        // console.log('closeBox');
         
         $('.simple-lightbox, .modal-backdrop').remove();
 
