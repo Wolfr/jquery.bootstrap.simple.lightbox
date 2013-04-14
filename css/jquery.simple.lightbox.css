@@ -1,127 +1,62 @@
 /*
-	Modal box pattern
-	Requirements:
-		* no padding or margin on body, html
-		* use CSS reset
+  jquery.simple.lightbox
+  Works together w/ bootstrap modals
 */
 
 /*
-	If this is defined elsewhere,
-	feel free to remove it:
+  Modal itself
 */
 
-html, body {
-	width: 100%;
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
+.simple-lightbox img {
+  display: block;
+  margin: 0 auto;
+  background: #FFF;
+  /* @inc .boxShadow */
+  -webkit-box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+  -moz-box-shadow: rgba(0,0,0,0.25) 3px 3px 12px;
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+  
 }
 
-#modalOverlay {
-	z-index: 1000;
-
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	_position: absolute;
-	top: 0;
-	left: 0;
-
-	background: #333;
-
-	/* @inc opacity */
-	opacity: 0.33;
-	filter: alpha(opacity=33);
-	-ms-filter: "alpha(opacity=33)";
-	-khtml-opacity: 0.33;
-	-moz-opacity: 0.33;
+.simple-lightbox .caption {
+  padding: 6px 12px;
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  margin: 0;
+  color: #FFF;
+  background: #000;
+  background: rgba(0,0,0,0.4);
+  font-weight: 700;
+  zoom: 1;
+  
+  /* Rounded corners */
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
 }
 
-/*
-	Modal itself
-*/
+.simple-lightbox .close {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  color: #FFF;
+  top: 12px;
+  right: 12px;
+  text-align: center;
+  opacity: 1;
+  text-shadow: none;
+  background: rgba(0,0,0,0.4);
+  display: block;
 
-.modal {
-	z-index: 1200;
-	margin: 0 auto;
-	position: relative;
-	
+  /* Rounded corners */
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
 }
 
-.modal .buttonClose {
-	position: absolute;
-	right: -12px;
-	top: -12px;
-}
-
-.modal .mContent {
-	background: #FFF;
-	margin: 0; /* Don't remove this, IE bugfix */
-	position: relative;
-	_display: inline;
-	margin: 0 auto;
-
-
-	text-align: center;
-
-	/* @inc .boxShadow */
-	-webkit-box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
-	-moz-box-shadow: rgba(0,0,0,0.25) 3px 3px 12px;
-	box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
-}
-
-	.mContent img {
-		display: block;
-		margin: 0 auto;
-	}
-
-	.mContent .caption {
-		padding: 6px 12px;
-		position: absolute;
-		bottom: 6px;
-		left: 6px;
-		margin: 0;
-		color: #FFF;
-		background: #000;
-		background: rgba(0,0,0,0.4);
-		font-weight: 700;
-		zoom: 1;
-		
-		/* @inc .rc */
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-	}
-
-/*
-	Close button
-*/
-
-.buttonClose:link,
-.buttonClose:visited {
-
-	background: url(../images/button_close.png);
-	_background: url(../images/button_close.gif);
-	width: 27px;
-	height: 27px;
-
-	display: block;
-	border: none;
-	text-indent: -9000px;
-}
-
-.buttonClose:hover,
-.buttonClose:active,
-.buttonClose:focus {
-	background-position: 0 -27px;
-}
-
-/*
-	Shim
-*/
-
-.imageShim, #imageShim {
-	position: absolute;
-	left: -9999px;
-	top: -9999px;
+.simple-lightbox .close span {
+  position: relative;
+  bottom: 3px;
 }

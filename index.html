@@ -26,20 +26,20 @@
             font-size: 11px;
         }
     
-        .imageList {
+        .image-list {
             padding: 0 0 12px;
             list-style: none;
             overflow: hidden;
             zoom: 1;
         }
 
-        .imageList li {
+        .image-list li {
             float: left;
             margin: 0 1px 0 0;
         }
 
-            .imageList a,
-            .imageList img {
+            .image-list a,
+            .image-list img {
                 display: block;
                 width: 100px;
             }
@@ -49,26 +49,31 @@
 <body>
     
     <div id="container">
-        <h3>Simple jQuery lightbox</h3>
-
+        <h3>jquery.simple.lightbox demo</h3>
+        
         <p>Why do all lightboxes out there use a gazillion images and options when all I want is to show a larger image when I click a small one?</p>
 
-        <p><strong>Features:</strong> keyboard close with Esc or X button; automatically centers in all browsers; easy to add, just add a <code>class="lightbox"</code> to a linked image</p>
+        <ul>
+            <li>This lightbox builds on Bootstrap using bootstrap modal styles.</li>
+            <li>Keyboard close with escape button</li>
+            <li>automatically centers in all browsers</li>
+            <li>Easy to add, just add a data attribute <code>data-lightbox</code> to a linked image.</li>
+        </ul>
 
         <h4>Demo</h4>
 
         <p>Click an image:</p>
 
-        <ul class="imageList unstyled">
-            <li><a href="demo_images/medium_1.jpg" class="lightbox"><img src="demo_images/tmb_1.jpg" alt="My caption" /></a></li>
-            <li><a href="demo_images/medium_2.jpg" class="lightbox"><img src="demo_images/tmb_2.jpg" alt="My caption" /></a></li>
-            <li><a href="demo_images/medium_3.jpg" class="lightbox"><img src="demo_images/tmb_3.jpg" alt="My caption" /></a></li>
-            <li><a href="demo_images/medium_4.jpg" class="lightbox"><img src="demo_images/tmb_4.jpg" alt="My caption" /></a></li>
-            <li><a href="demo_images/medium_5.jpg" class="lightbox"><img src="demo_images/tmb_5.jpg" alt="My caption" /></a></li>
+        <ul class="image-list unstyled">
+            <!-- <li><a href="demo_images/medium_1.jpg" data-lightbox><img src="demo_images/tmb_1.jpg" alt="My caption 1" /></a></li> -->
+            <li><a href="demo_images/medium_2.jpg" data-lightbox><img src="demo_images/tmb_2.jpg" alt="My caption 2" /></a></li>
+            <li><a href="demo_images/medium_3.jpg" data-lightbox><img src="demo_images/tmb_3.jpg" alt="My caption 3" /></a></li>
+            <li><a href="demo_images/medium_4.jpg" data-lightbox><img src="demo_images/tmb_4.jpg" alt="My caption 4" /></a></li>
+            <li><a href="demo_images/medium_5.jpg" data-lightbox><img src="demo_images/tmb_5.jpg" alt="My caption 5" /></a></li>
         </ul>
 
         <h4>Browser support</h4>
-        <p>Tested in FF3.5+, Safari 5, Chrome 6 (IE6 support was removed)</p>
+        <p>This code was fully rewritten and is yet untested in anything but Chrome.</p>
 
         <h4>Files</h4>
 
@@ -81,26 +86,24 @@
         <h4>Usage</h4>
 
         <ul>
-            <li>Make sure you required <code>jquery.wolfmodal.js</code>.</li>
+            <li>Make sure you required <code>jquery.simple.lightbox.js</code>.</li>
             <li>Link a small image to a big image: <code>&lt;a href=&quot;image_big.jpg&quot;&gt;&lt;img src=&quot;image_small.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</code></li>
-            <li>Add a <code>class="lightbox"</code> to the &lt;a&gt;</li>
+            <li>Add a data attribute <code>data-lightbox</code> to the &lt;a&gt;</li>
             <li>Optional: Add alt text to the <code>&lt;img&gt;</code> for the caption</li>
         </ul>
 
         <h4>Todo</h4>
-
         <ul>
-            <li>Switch to - classes like bootstrap</li>
-            <li>Make lightbox cover max. 90% of viewport width/height</li>
+            <li>Add bootstrap transitions</li>
+            <li>Make lightbox cover max. 90% of viewport width/height (= better support for portrait images, really huge images)</li>
             <li>Make captions only visible when there is actually a caption</li>
-            <li>Switch to data attribute for behavior instead of CSS class</li>
             <li>If an image does not get loaded, provide fallback/loading state</li>
             <li>To test/Check: embed, object or selects in the background in IE</li>
         </ul>
 
         <h4>Credits</h4>
 
-        <p>License: BSD, details see file called LICENSE</p>
+        <p>©2013, <a href="http://www.wolfslittlestore.be">Wolf's Little Store</a> - Free to use under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.</p>
 
         <ul>
             <li>Original javascript: <a href="http://sumocoders.be/">Tijs Verkoyen</a></li>
@@ -109,8 +112,17 @@
 
     </div>
 
+    <!-- Add jQuery -->
     <script type="text/javascript" src="js/jquery.js"></script>
+
+    <!-- Add Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- Add our plugin -->
     <script type="text/javascript" src="js/jquery.simple.lightbox.js"></script>
+
+    <!-- Invoke our plugin -->
+    <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 </html>

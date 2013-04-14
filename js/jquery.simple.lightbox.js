@@ -1,87 +1,105 @@
-$(document).ready(function() {
+/*
+ * jQuery simple lightbox
+ * A really simple jquery lightbox
+ * version 0.3
+ *
+ * www.wolfslittlestore.be
+ * Copyright 2013, Wolf's Little Store
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+*/
 
-  var modalHTML = '<div class="modal" style="display: none;"><div class="mContent"><a href="#" class="buttonClose" title="Close this window"><strong>Close</strong> (X)</a><img src="" alt="" /><p class="caption"></p></div></div><div id="modalOverlay" style="display: none\;">&nbsp\;</div>';
-  $('body').append(modalHTML);
-  
-  // Preload all images
-  $('a.lightbox').each(function() {
-    var src = $(this).attr('href');
-    $('body').append('<img class="imageShim" src="' + src + '" />');
-  });
+(function($) {
 
-  // When clicking on an <a> with class lightbox
-  $('a.lightbox').click(function(evt)
-  {
-    // Prevent default link behaviour
-    evt.preventDefault();
+  $.fn.simpleLightbox = function() {
 
-    // Define contents of lightbox
-    $('.modal img')
-      .attr('src', $(this).attr('href'))
-      .attr('alt', $(this).attr('alt'));
+    return this.each(function() {
 
-    // Caption = img alt tag
-    $('.caption').html($(this).find('img').attr('alt'));
+      var $this = $(this);
 
-    // Load the image offscreen
-    var imageSource = $(this).attr('href');
-    $('body').append('<img id="imageShim" src="' + imageSource + '" />');
+      init();
 
-    var imageShim = $('#imageShim');
-    var shimWidth = imageShim.width();
-    var shimHeight = imageShim.height();
-    // console.log('The width of the image is ' + shimWidth + ' and the height is ' + shimHeight);
+      function init(e, options) {
 
-    // initialize object references
-    var oElement = $('.modal');
-    var oWindow = $(window);
+        // Plugin settings
+        // No options yet
+        var settings = $.extend( {
+          placeholder         : 'value'
+        }, options);
 
-    // calculate offset
-    var offsetLeft = parseInt((oWindow.width() - shimWidth) / 2);
-    var offsetTop = parseInt((oWindow.height() - shimHeight) / 2);
+        // When clicking on an <a> with class lightbox
+        $this.click(function(e) {
+          // Prevent default link behavior
+          e.preventDefault();
 
-    oElement.css('left', offsetLeft)
-        .css('top', offsetTop)
-        .css('width', shimWidth)
-        .css('height', shimHeight)
-        .css('position', 'fixed');
+          // Open lightbox
+          showBox();
+        });
+      }
 
-    // open lightbox
-    showBox();
-  });
+      function showBox(e){
 
-});
+        // Set up our needed HTML
+        var modalHTML = '<div class="simple-lightbox modal hide">\
+                          <div class="modal-content">\
+                             <a class="close" href="#"><span>&times;</span></a>\
+                             <img src="" alt="" /><p class="caption"></p>\
+                           </div>\
+                         </div>\
+                         <div class="modal-backdrop hide">&nbsp\;</div>';
 
-function showBox() {
+        $('body').append(modalHTML);
 
-  // Simple fadeIn for the better browsers that support opacity well
-  $('#modalOverlay, .modal').fadeIn("fast");
+        console.log('showBox');
+        console.log($this);
 
-  // Hide modal box when clicking outside it or on the close button
-  $('#modalOverlay, .buttonClose').bind('click', function(evt) {
-    // Prevent default link behaviour
-    evt.preventDefault();
-    //  Close modal box
-    closeBox();
-  });
+        // Load the image offscreen
+        var imageSource = $this.attr('href');
+        console.log(imageSource);
+        $('body').append('<img class="image-shim hide" src="' + imageSource + '" />');
 
-  // Hide modal box when pressing escape button
-  $('html').bind("keyup", function(evt) {
-    if (evt.keyCode == 27 || evt.keyCode == 88) {
-      closeBox();
-    }
-  });
+        // Define contents of lightbox
+        $('.modal img')
+          .attr('src', $this.attr('href'))
+          .attr('alt', $this.find('img').attr('alt'));
 
-}
+        // Caption = img alt tag
+        $('.caption').html($this.find('img').attr('alt'));
 
-function closeBox() {
-  // Make sure the hide code has no effect on the modal box itself
-  $('.modal').bind('click', function(evt) { evt.stopPropagation(); });
+        $('.modal-backdrop, .modal').removeClass('hide');
 
-  // Clean up DOM: all shims should be removed
-  $('#imageShim').remove();
+        // Hide modal box when clicking outside it or on the close button
+        $('.modal-backdrop, .close').bind('click', function(evt) {
+          // Prevent default link behaviour
+          evt.preventDefault();
+          //  Close modal box
+          closeBox();
+        });
 
-  // Hide modal and overlay
-  $('#modalOverlay, .modal').fadeOut("fast");
+        // Hide modal box when pressing escape button
+        $('html').bind("keyup", function(evt) {
+          if (evt.keyCode == 27 || evt.keyCode == 88) {
+            closeBox();
+          }
+        });
 
-}
+      };
+
+      function closeBox(e) {
+
+        console.log('closeBox');
+        
+        $('.simple-lightbox, .modal-backdrop').remove();
+
+        // Make sure the hide code has no effect on the modal box itself
+        $('.modal').bind('click', function(evt) { evt.stopPropagation(); });
+
+        // Hide modal and backdrop
+        $('.modal-backdrop, .modal').addClass('hide');
+      }
+
+    });
+
+  };
+
+})(jQuery);
