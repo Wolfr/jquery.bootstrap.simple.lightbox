@@ -1,6 +1,4 @@
-# jquery.bootstrap.simple.lightbox
-
-Why do all lightboxes out there use a gazillion images and options when all I want is to show a larger image when I click a small one?
+jquery.bootstrap.simple.lightbox is a simple image lightbox using jQuery and Bootstrap.
 
 * This lightbox builds on Bootstrap using the Bootstrap modal styles.
 * Keyboard close with escape button
