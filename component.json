@@ -1,0 +1,16 @@
+{
+  "name": "jquery.bootstrap.simple.lightbox",
+  "version": "0.0.1",
+  "main": "js/jquery.bootstrap.simple.lightbox.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8.0"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "2.3.1"
+  }
+}

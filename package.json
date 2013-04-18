@@ -1,0 +1,36 @@
+{
+  "name": "jquery.bootstrap.simple.lightbox.js",
+  "version": "0.0.1",
+  "main": "./js/jquery.bootstrap.simple.lightbox.js",
+  "description": "A simple image lightbox using jQuery and Bootstrap",
+  "keywords": [
+    "html",
+    "prototyping"
+  ],
+  "url": "http://github.com/Wolfr/jquery.bootstrap.simple.lightbox",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git://github.com/Wolfr/jquery.bootstrap.simple.lightbox.git"
+    }
+  ],
+  "author": "Johan Ronsse <wolf@wolfslittlestore.be>",
+  "contributors": [],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/Wolfr/jquery.extendedinput/master/LICENSE"
+    }
+  ],
+  "dependencies": [],
+  "directories": {
+    "src": "js"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-uglify": "~0.2.0"
+  }
+}
