@@ -78,7 +78,6 @@
 
 .simple-lightbox .close span {
   position: relative;
-  top: 10px;
-  line-height: 0;
-  display: block;
+  bottom: 2px;
+  display: inline-block;
 }
