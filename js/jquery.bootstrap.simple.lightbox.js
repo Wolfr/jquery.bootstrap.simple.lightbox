@@ -64,8 +64,10 @@
           .attr('alt', $this.find('img').attr('alt'));
 
         // Caption = img alt tag
-        $('.caption').html($this.find('img').attr('alt'));
-
+        if ($this.find('img').attr('alt')) {
+          $('.caption').addClass('active').html($this.find('img').attr('alt'));
+        };
+        
         $('.modal-backdrop, .modal').removeClass('hide');
 
         // Hide modal box when clicking outside it or on the close button

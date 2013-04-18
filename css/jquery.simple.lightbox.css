@@ -19,6 +19,11 @@
 }
 
 .simple-lightbox .caption {
+  display: none;
+}
+
+.simple-lightbox .caption.active {
+  display: block;
   padding: 6px 12px;
   position: absolute;
   bottom: 6px;
@@ -29,12 +34,13 @@
   background: rgba(0,0,0,0.4);
   font-weight: 700;
   zoom: 1;
-  
+
   /* Rounded corners */
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-}
+} 
+
 
 .simple-lightbox .close {
   position: absolute;
