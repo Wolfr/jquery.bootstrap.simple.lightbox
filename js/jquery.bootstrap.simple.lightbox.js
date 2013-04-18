@@ -55,7 +55,7 @@
         $('body').append('<img class="image-shim hide" src="' + imageSource + '" />');
 
         // Define contents of lightbox
-        $('.modal img')
+        $('.simple-lightbox img')
           .attr('src', $this.attr('href'))
           .attr('alt', $this.find('img').attr('alt'));
 
@@ -67,7 +67,7 @@
           $('.caption').addClass('active').html($this.find('img').attr('alt'));
         };
         
-        $('.modal-backdrop, .modal').removeClass('hide');
+        $('.modal-backdrop, .simple-lightbox').removeClass('hide');
 
         // Hide modal box when clicking outside it or on the close button
         $('.modal-backdrop, .close').bind('click', function(evt) {
@@ -93,7 +93,7 @@
         $('.simple-lightbox, .modal-backdrop').remove();
 
         // Make sure the hide code has no effect on the modal box itself
-        $('.modal').bind('click', function(evt) { evt.stopPropagation(); });
+        $('.simple-lightbox').bind('click', function(evt) { evt.stopPropagation(); });
 
         // Hide modal and backdrop
         $('.modal-backdrop, .modal').addClass('hide');
