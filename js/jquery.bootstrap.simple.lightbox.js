@@ -40,7 +40,7 @@
       function showBox(e){
 
         // Set up our needed HTML
-        var modalHTML = '<div class="simple-lightbox modal hide">\
+        var modalHTML = '<div class="simple-lightbox modal hide fade">\
                           <div class="modal-content">\
                              <a class="close" href="#"><span>&times;</span></a>\
                              <img src="" alt="" /><p class="caption"></p>\
@@ -50,18 +50,17 @@
 
         $('body').append(modalHTML);
 
-        // console.log('showBox');
-        // console.log($this);
-
         // Load the image offscreen
         var imageSource = $this.attr('href');
-        // console.log(imageSource);
         $('body').append('<img class="image-shim hide" src="' + imageSource + '" />');
 
         // Define contents of lightbox
         $('.modal img')
           .attr('src', $this.attr('href'))
           .attr('alt', $this.find('img').attr('alt'));
+
+        // Fade in the lightbox
+        $('.simple-lightbox').addClass('in');
 
         // Caption = img alt tag
         if ($this.find('img').attr('alt')) {
