@@ -75,16 +75,19 @@
             <li><a href="demo_images/medium_5.jpg" data-lightbox><img src="demo_images/tmb_5.jpg" alt="My caption 5" /></a></li>
         </ul>
 
-        <h4>Browser support</h4>
-        <p>This code is yet untested in anything but Chrome for Mac.</p>
-
-        <h4>Necessary files</h4>
-
+        <h4>To run locally</h4>
         <ul>
-            <li>jQuery</li>
-            <li>Bootstrap CSS and more specifically the modal and utility styles (for the <code>.hide</code> class)</li>
-            <li>Bootstrap JS and more specifically the transition (optional) script</li>
+            <li>Git clone the repository <code>git clone git@github.com:Wolfr/jquery.bootstrap.simple.lightbox.git</code></li>
+            <li>Run <code>npm install</code></li>
+            <li>Run <code>bower install jquery</code></li>
+            <li>Run <code>bower install sass-bootstrap</code></li>
+        </ul>
 
+        <h4>Required files</h4>
+        <ul>
+            <li>This plugin needs a recent version of jQuery (>1.8.0) to run. It will probably work with older versions as well but this is untested.</li>
+            <li>Bootstrap CSS and more specifically the modal and utility styles (for the <code>.hide</code> class)</li>
+            <li>Bootstrap JS for: modals, transitions (optional)</li>
             <li><code>jquery.simple.lightbox.css</code> includes CSS to make the modal look nice, but this CSS is not required. You can ignore the file and roll your own</li>
             <li><code>jquery.simple.lightbox.js</code>: the script itself</li>
         </ul>
@@ -93,23 +96,58 @@
 
         <ul>
             <li>Link a small image to a big image: <code>&lt;a href=&quot;image_big.jpg&quot;&gt;&lt;img src=&quot;image_small.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</code></li>
-            <li>Add a data attribute <code>data-lightbox</code> to the &lt;a&gt;</li>
+            <li>Add a data attribute <code>data-lightbox</code> to the <code>&lt;a&gt;</code></li>
             <li>Optional: Add alt text to the <code>&lt;img&gt;</code> for the caption</li>
             <li>Initialize the plugin:</li>
         </ul>
         
-        <pre><code>// Invoke our plugin
-$('[data-lightbox]').simpleLightbox();
+        <pre><code><span style="color: blue">// Invoke our plugin</span>
+<span style="color: grey">$('[data-lightbox]').simpleLightbox();</span>
 </code></pre>
 
         <h4>Todo</h4>
         <ul>
             <li>Clarify which jQuery version is needed</li>
             <li>Test if this works with zepto.js</li>
-            <li>Add bootstrap transitions</li>
+            <li>Make bootstrap transitions work</li>
             <li>If an image does not get loaded, provide fallback/loading state</li>
             <li>To test/Check: embed, object or selects in the background in IE</li>
         </ul>
+        
+        <h4>Browser support</h4>
+        <p>This code was tested in:</p>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>IE7-IE10</td>
+                <td>Windows 7</td>
+                <td>Issue with portrait image (due to no max-height support)</td>
+            </tr>
+            <tr>
+                <td>Opera</td>
+                <td>Mac</td>
+                <td><span class="error">Broken - issue with portrait and landscape images</span></td>
+            </tr>
+            <tr>
+                <td>Mobile Safari</td>
+                <td>Mac (simulated)</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>Safari</td>
+                <td>Mac</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>Chrome 26</td>
+                <td>Mac and Linux</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>Firefox 20</td>
+                <td>Mac</td>
+                <td>✓</td>
+            </tr>
+        </table>
 
         <h4>Credits</h4>
 
